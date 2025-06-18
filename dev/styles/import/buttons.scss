@@ -1,0 +1,30 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  border: 1px solid $color-accent;
+  padding: 0rem 1rem;
+  height: 8rem;
+  background: $color-accent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #fff;
+  @include tr;
+  width:100%;
+  &:hover {
+    opacity: 0.8;
+  }
+  &_light{
+    background: #dbe2f2;
+    border-color:#dbe2f2;
+    color: $color-accent;
+  }
+  &_small-font{
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.6rem;
+    }
+  }
+
+}
