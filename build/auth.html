@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Вход</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./libs/css/jquery-ui.css">
+    <link rel="stylesheet" href="./libs/semantic/semantic.min.css">
     <link rel="stylesheet" href="./css/all.css">
   </head>
   <body>
@@ -20,29 +24,31 @@
         <div class="container">
           <div class="wrapper"> 
             <h1 class="h1">Вход</h1>
-            <div class="form">
-              <form action="">
-                <div class="form"> 
-                  <div class="form-block"> 
-                    <label class="form-label">Email или телефон</label>
-                    <input class="form-input" type="text" value="" name="" placeholder="Email или телефон">
-                  </div>
-                  <div class="form-block"> 
-                    <label class="form-label">Пароль</label>
-                    <input class="form-input" type="password" value="" name="" placeholder="Пароль">
-                  </div>
-                  <div class="form-block form-block_forget"> <a href="">Забыли пароль?</a></div>
-                  <div class="form-buttons">
-                    <button class="button" type="submit">Войти</button>
-                  </div>
+            <form action="">
+              <div class="form"> 
+                <div class="form-block"> 
+                  <label class="form-label">Email или телефон</label>
+                  <input class="form-input" type="text" value="" name="" placeholder="Email или телефон">
                 </div>
-              </form>
-            </div>
+                <div class="form-block"> 
+                  <label class="form-label">Пароль</label>
+                  <input class="form-input" type="password" value="" name="" placeholder="Пароль">
+                </div>
+                <div class="form-block form-block_forget"> <a href="">Забыли пароль?</a></div>
+                <div class="form-buttons">
+                  <button class="button" type="submit">Войти</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
     <script src="./libs/js/jquery.min.js"></script>
+    <script src="./libs/js/jquery-ui.js"></script>
+    <script src="./libs/js/jquery.maskedinput.js"></script>
+    <script src="./libs/semantic/semantic.min.js"></script>
+    <script src="./libs/js/datepicker-ru.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

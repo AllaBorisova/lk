@@ -1,111 +1,43 @@
-let timer;
-let seconds = 0;
-let minutes = 0;
-const timerElement = document.getElementById('timer');
-// const startBtn = document.getElementById('startBtn');
-// const stopBtn = document.getElementById('stopBtn');
-// const resetBtn = document.getElementById('resetBtn');
+jQuery(document).ready(function ($) {
+  $('[type=tel], .form-input_tel').mask('+7 (999) 999-99-99');
+  $('.form-input_date').datepicker($.datepicker.regional['hi']);
 
-function updateTimer() {
-  seconds++;
-
-  if (seconds >= 60) {
-    seconds = 0;
-    minutes++;
-  }
-
-  const formattedTime =
-    (minutes < 10 ? '0' + minutes : minutes) +
-    ':' +
-    (seconds < 10 ? '0' + seconds : seconds);
-
-  timerElement.textContent = formattedTime;
-}
-
-function startTimer() {
-  if (!timer) {
-    timer = setInterval(updateTimer, 1000);
-  }
-}
-// startTimer();
-
-// startBtn.addEventListener('click', function () {
-//   if (!timer) {
-//     timer = setInterval(updateTimer, 1000);
-//   }
-// });
-
-// stopBtn.addEventListener('click', function () {
-//   clearInterval(timer);
-//   timer = null;
-// });
-
-// resetBtn.addEventListener('click', function () {
-//   clearInterval(timer);
-//   timer = null;
-//   seconds = 0;
-//   minutes = 0;
-//   timerElement.textContent = '00:00';
-// });
-
-jQuery( document ).ready( function ( $ ) { } );
-
-//keyboard
-$(function () {
-  var $write = $('#write'),
-    shift = false,
-    capslock = false;
-  $('#write').click(function () {
-    $('.container-keyboard').toggleClass('active');
+  //for single input file
+  $('.form-block_file input[type=file]').on('change', function () {
+    let file = this.files[0];
+    $(this).closest('.form-block_file').find('.form-file-btn').html(file.name);
   });
 
-  $('#keyboard li').click(function () {
-    var $this = $(this),
-      character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
+  //for multiple input file
+  var dt = new DataTransfer();
 
-    // Shift keys
-    if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) {
-      $('.letter').toggleClass('uppercase');
-      $('.symbol span').toggle();
-
-      shift = shift === true ? false : true;
-      capslock = false;
-      return false;
+  $(document).on('click', '.input-file-list-remove', function () {
+    let name = $(this).parent().find('.input-file-list-name').text();
+    let input = $(this).closest('.input-file-row').find('input[type=file]');
+    $(this).closest('.input-file-list-item').remove();
+    for ( let i = 0; i < dt.items.length; i++ ) {
+      if (name === dt.items[i].getAsFile().name) {
+        dt.items.remove(i);
+      }
     }
+    input[0].files = dt.files;
+  });
 
-    // Caps lock
-    if ($this.hasClass('capslock')) {
-      $('.letter').toggleClass('uppercase');
-      capslock = true;
-      return false;
+  $('.input-file input[type=file]').on('change', function () {
+    let $files_list = $(this).closest('.input-file-list');
+    // $files_list.empty();
+
+    for (var i = 0; i < this.files.length; i++) {
+      let new_file_input =
+        '<div class="input-file-list-item">' +
+        '<span class="input-file-list-icon"></span><span class="input-file-list-name">' +
+        this.files.item(i).name +
+        '</span>' +
+        '<span class="input-file-list-remove"></span>' +
+        '</div>';
+      $files_list.prepend(new_file_input);
+      dt.items.add(this.files.item(i));
     }
-
-    // Delete
-    if ($this.hasClass('delete')) {
-      var html = $write.val();
-
-      $write.val(html.substr(0, html.length - 1));
-      return false;
-    }
-
-    // Special characters
-    if ($this.hasClass('symbol')) character = $('span:visible', $this).html();
-    if ($this.hasClass('space')) character = ' ';
-    if ($this.hasClass('tab')) character = '\t';
-    if ($this.hasClass('return')) character = '\n';
-
-    // Uppercase letter
-    if ($this.hasClass('uppercase')) character = character.toUpperCase();
-
-    // Remove shift once a key is clicked.
-    if (shift === true) {
-      $('.symbol span').toggle();
-      if (capslock === false) $('.letter').toggleClass('uppercase');
-
-      shift = false;
-    }
-
-    // Add the character
-    $write.val($write.val() + character);
+    this.files = dt.files;
   });
 });

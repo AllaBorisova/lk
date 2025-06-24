@@ -94,6 +94,7 @@ const svg = () => {
         mode: {
           stack: {
             sprite: '../sprite.svg',
+            // example: true
           },
         },
       })
