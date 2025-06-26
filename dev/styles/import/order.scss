@@ -1,0 +1,153 @@
+﻿.order {
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+
+    .h1 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__print {
+    margin-left: auto;
+  }
+
+  &__inner {
+    border-radius: 1.4rem;
+    background: #fff;
+    box-shadow: 6px 6px 54px 0 rgba(0, 0, 0, 0.05);
+    padding: 3.7rem 3.2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__table {
+    margin-bottom: 4rem;
+  }
+
+  .form-table {
+    max-width: 100%;
+    margin-bottom: 6rem;
+  }
+
+  &__docs {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    gap: 1rem;
+  }
+
+  &-doc {
+    padding: 2rem;
+    border-radius: 1.4rem;
+    box-shadow: 6px 6px 54px 0 rgba(0, 0, 0, 0.05);
+    background: #e4e6f1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &__icon {
+      display: block;
+      width: 3.2rem;
+      height: 3.2rem;
+      background: url(../img/icon-doc.svg) center no-repeat;
+      margin-bottom: 2rem;
+    }
+
+    &__sub {
+      font-size: 1.4rem;
+      color: rgba(32, 34, 36, 0.5);
+      opacity: 0.8;
+    }
+
+    &__name {
+      font-size: 1.8rem;
+      opacity: 0.8;
+      max-width: 18rem;
+      word-break: break-word;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 34.1rem auto;
+    gap: 1.9rem;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.4);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  &__th {
+    opacity: 0.8;
+  }
+
+  &__buttons {
+    max-width: 56.4rem;
+    margin-bottom: 3rem;
+  }
+
+  &__comment {
+    border-radius: 1rem;
+    background: #e7ecf8;
+    font-size: 1.6rem;
+    line-height: 130%;
+    color: #000;
+    padding: 3rem;
+
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
+
+    &-text {
+      margin-bottom: 3rem;
+    }
+
+    &-sub {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4rem;
+      font-size: 1.4rem;
+      letter-spacing: 0em;
+      opacity: 0.8;
+    }
+  }
+
+  &__contract {
+    display: grid;
+    gap: 4.8rem;
+    grid-template-columns: auto 43.6rem;
+  }
+}
+
+.contract {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+
+  &__status {
+    display: inline-flex;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    background: #dbe2f2;
+    font-size: 1.4rem;
+    line-height: 150%;
+    opacity: 0.8;
+  }
+
+  &__date {
+    opacity: 0.8;
+    font-size: 1.4rem;
+    line-height: 150%;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
