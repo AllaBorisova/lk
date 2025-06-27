@@ -48,15 +48,21 @@ h2,
     max-width: 107.4rem;
     width: 100%;
     margin-bottom: 2.8rem;
-
+    &_order {
+      max-width: 100%;
+      margin-bottom: 6rem;
+    }
     &__row {
       display: grid;
-      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: 19% 19% 19% 19% 20%;
       padding: 1.5rem 2rem;
       gap: 1%;
       border-bottom: 1px solid rgba(151, 151, 151, 0.4);
       padding: 3.2rem 2rem;
       font-weight: 400;
+      &_3{
+        grid-template-columns: 20% 25% auto;
+      }
 
       &_head {
         background: #dbe2f2;
@@ -208,17 +214,6 @@ h2,
 
 }
 
-// input::-webkit-outer-spin-button,
-// input::-webkit-inner-spin-button {
-//   -webkit-appearance: none;
-//   margin: 0;
-// }
-
-// /* Firefox */
-// input[type='number'] {
-//   -moz-appearance: textfield;
-// }
-
 .custom-checkbox {
   display: flex;
   gap: 1.3rem;
@@ -281,59 +276,6 @@ h2,
   }
 }
 
-// .custom-radio {
-//   display: flex;
-//   gap: 1rem;
-//   &__radio {
-//     display: none;
-//   }
-//   &__span {
-//     position: relative;
-//     width: 1.7rem;
-//     height: 1.7rem;
-//     border-radius: 0.6rem;
-//     border: 7px solid #e4e4e4;
-//     cursor: pointer;
-//     background: #fff;
-//   }
-//   &__span,
-//   &__label {
-//     display: block;
-//   }
-//   &__span {
-//     margin-top: 0.4rem;
-//   }
-//   &__label {
-//     color: $color-text-dark;
-//     font-size: 1.6rem;
-//     line-height: 2.2rem;
-//     a {
-//       color: $color-text-dark;
-//       text-decoration: underline;
-//       &:hover {
-//         text-decoration: none;
-//       }
-//     }
-//   }
-//   &__radio:checked + &__span::before {
-//     content: '';
-//     display: block;
-//     position: absolute;
-//     width: 1.7rem;
-//     height: 1.7rem;
-//     border-radius: 0.6rem;
-//     border: 0.7rem solid $color-primary;
-//     background: #fff;
-//     left: -0.7rem;
-//     top: -0.7rem;
-//   }
-//   &_reverse-red {
-//     flex-direction: row-reverse;
-//     .custom-radio__radio:checked + .custom-radio__span::before {
-//       // background: $color-second;
-//     }
-//   }
-// }
 .form-docs {
   .input-file-row {
     display: inline-block;
@@ -441,6 +383,8 @@ h2,
     opacity: 0.8;
     display: block;
     word-break: break-word;
+    height: 3.9rem;
+    overflow: hidden;
   }
 
   .input-file-list-remove {

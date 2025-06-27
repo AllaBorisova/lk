@@ -26,15 +26,15 @@
     margin-bottom: 4rem;
   }
 
-  .form-table {
-    max-width: 100%;
-    margin-bottom: 6rem;
-  }
+  
 
   &__docs {
     display: grid;
-    grid-template-columns: repeat(4, 20%);
+    grid-template-columns: repeat(4, 25%);
     gap: 1rem;
+    &_order{
+      max-width: 107.4rem;
+    }
   }
 
   &-doc {
