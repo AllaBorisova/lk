@@ -12,29 +12,36 @@
   font-size: 2rem;
   color: #fff;
   @include tr;
-  width:100%;
+  width: 100%;
+  text-align: center;
+
   &:hover {
     opacity: 0.8;
   }
-  &_light{
+
+  &_light {
     background: #dbe2f2;
-    border-color:#dbe2f2;
+    border-color: #dbe2f2;
     color: $color-accent;
   }
-  &_small-font{
+
+  &_small-font {
     @media (max-width: $breakpoint-mobile) {
       font-size: 1.6rem;
     }
   }
-  &_print{
-    width:5rem;
-    height:5rem;
-    padding:0.9rem;
+
+  &_print {
+    width: 5rem;
+    height: 5rem;
+    padding: 0.9rem;
   }
-  &_delete{
+
+  &_delete {
     border: 1px solid #0e40b4;
   }
-  &_min{
+
+  &_min {
     max-width: 56.4rem;
   }
 

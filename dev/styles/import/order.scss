@@ -5,8 +5,17 @@
     gap: 2.5rem;
     margin-bottom: 2rem;
 
+    @media (max-width: $breakpoint-mobile) {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     .h1 {
       margin-bottom: 0;
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 100%;
+      }
     }
   }
 
@@ -20,19 +29,41 @@
     box-shadow: 6px 6px 54px 0 rgba(0, 0, 0, 0.05);
     padding: 3.7rem 3.2rem;
     margin-bottom: 3rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: 2rem;
+    }
   }
 
   &__table {
     margin-bottom: 4rem;
   }
 
-  
+
 
   &__docs {
     display: grid;
     grid-template-columns: repeat(4, 25%);
     gap: 1rem;
-    &_order{
+
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+    }
+
+    &-scroll {
+      @media (max-width: $breakpoint-tablet) {
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+          width: 0 !important;
+        }
+      }
+    }
+
+    &_order {
       max-width: 107.4rem;
     }
   }
@@ -45,6 +76,9 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    flex: none;
+    flex-wrap: nowrap;
+    gap: 1rem;
 
     &__icon {
       display: block;
@@ -76,6 +110,14 @@
     padding-top: 2rem;
     padding-bottom: 1rem;
     font-size: 1.6rem;
+
+
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      padding: 1rem 0;
+    }
   }
 
   &__th {
@@ -95,12 +137,20 @@
     color: #000;
     padding: 3rem;
 
+    @media (max-width: $breakpoint-mobile) {
+      padding: 2rem;
+    }
+
     p:not(:last-child) {
       margin-bottom: 1em;
     }
 
     &-text {
       margin-bottom: 3rem;
+
+      @media (max-width: $breakpoint-mobile) {
+        margin-bottom: 2rem;
+      }
     }
 
     &-sub {
@@ -111,6 +161,10 @@
       font-size: 1.4rem;
       letter-spacing: 0em;
       opacity: 0.8;
+
+      @media (max-width: $breakpoint-mobile) {
+        gap: 1rem;
+      }
     }
   }
 
@@ -118,6 +172,12 @@
     display: grid;
     gap: 4.8rem;
     grid-template-columns: auto 43.6rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 3rem;
+    }
   }
 }
 
@@ -126,6 +186,11 @@
   flex-direction: column;
   gap: 2rem;
   align-items: flex-start;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
 
   &__status {
     display: inline-flex;

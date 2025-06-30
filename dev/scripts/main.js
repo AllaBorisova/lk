@@ -1,4 +1,17 @@
-jQuery(document).ready(function ($) {
+jQuery( document ).ready( function ( $ ) {
+  
+   $('.hamburger').click(function () {
+    $('.hamburger').toggleClass('is-active');
+    $('body').toggleClass('open-menu');
+   } );
+  
+  //  $(document).mouseup(function (e) {
+  //   const container = $('.header-new-popup');
+  //   if (!container.is(e.target) && container.has(e.target).length === 0) {
+  //     $('body').removeClass('open-menu');
+  //   }
+  // });
+  
   $('[type=tel], .form-input_tel').mask('+7 (999) 999-99-99');
   $('.form-input_date').datepicker($.datepicker.regional['hi']);
 
