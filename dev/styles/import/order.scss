@@ -43,7 +43,7 @@
 
   &__docs {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 
     @media (max-width: $breakpoint-tablet) {

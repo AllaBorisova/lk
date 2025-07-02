@@ -172,6 +172,10 @@ h2,
         cursor: pointer;
       }
     }
+    &_error-text{
+      color:rgba(255, 0, 0, 1);
+      margin-top: 1rem;
+    }
   }
 
   &-buttons {
@@ -236,6 +240,12 @@ h2,
       background-repeat: no-repeat;
       background-position: center right 1.6rem;
       padding-right: 4.5rem;
+    }
+    .form-block_success &{
+      border-color:rgba(0, 182, 155, 1);
+    }
+    .form-block_error &{
+      border-color:rgba(255, 0, 0, 1);
     }
 
   }

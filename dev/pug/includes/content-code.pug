@@ -1,0 +1,30 @@
+﻿.page
+	.container
+		.wrapper 
+			h1.h1 Код подтверждения отправлен
+			form(action="")
+				.form 
+					.form-block 
+						label.form-label Код подтверждения
+						input.form-input(type="text" value="" name="" placeholder="00000000")
+					.form-block.form-block_forget 
+						a(href="") Отправить еще раз
+					.form-buttons
+						button.button(type="submit") Подтвердить
+			<br><br>
+			form(action="")
+				.form 
+					.form-block.form-block_success
+						label.form-label Код подтверждения
+						input.form-input(type="text" value="00000000" name="" placeholder="00000000")
+					.form-buttons
+						button.button(type="submit") Подтвердить
+			<br><br>
+			form(action="")
+				.form 
+					.form-block.form-block_error
+						label.form-label Код подтверждения
+						input.form-input(type="text" value="" name="" placeholder="00000000")
+						.form-block_error-text Неверный или просроченный код
+					.form-buttons
+						button.button(type="submit") Подтвердить
