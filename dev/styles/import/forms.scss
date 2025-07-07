@@ -133,6 +133,9 @@ h2,
         }
       }
     }
+    & + .h2{
+      margin-top: 5rem;
+    }
 
     &_file {
       position: relative;
@@ -215,6 +218,9 @@ h2,
     font-size: 1.8rem;
     color: #1e1e1e;
     @include tr;
+    & + .form-input{
+      margin-top: 1rem;
+    }
 
     &:focus {
       border-color: #313d4f;
@@ -470,4 +476,45 @@ h2,
   option {
     color: rgba(43, 48, 52);
   }
+}
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  margin-left: 0.5rem;
+  svg{
+    width: 1.8rem;
+    height: 1.8rem;
+    fill:$color-accent;
+  }
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 12rem;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 1.4rem;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 125%;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 1.5rem;
+  right: 100%; 
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
