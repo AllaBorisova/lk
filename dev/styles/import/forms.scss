@@ -490,7 +490,7 @@ h2,
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 12rem;
+  width: 25rem;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -502,6 +502,11 @@ h2,
   z-index: 1;
   top: -5px;
   left: 125%;
+  @media (max-width: $breakpoint-mobile) {
+    top: 100%;
+    left: 50%;
+    margin-left: -12.5rem; /* Use half of the width (120/2 = 60), to center the tooltip */
+  }
 }
 
 .tooltip .tooltiptext::after {
@@ -513,6 +518,16 @@ h2,
   border-width: 5px;
   border-style: solid;
   border-color: transparent black transparent transparent;
+  @media (max-width: $breakpoint-mobile) {
+   top:auto;
+   right:auto;
+  bottom: 100%;  
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+  }
 }
 
 .tooltip:hover .tooltiptext {
